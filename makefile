@@ -1,4 +1,4 @@
-MAKEFILE:
+
 all:README.md
 
      README.md:guessinggame.sh
