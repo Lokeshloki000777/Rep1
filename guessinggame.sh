@@ -1,10 +1,24 @@
-MAKEFILE:
-all:README.md
 
-     README.md:guessinggame.sh
-               touch README.md
-               echo "GUESSING FILE GAME "> READ.md
-               now="$(date)"
-              echo "DATE and TIME $now">>README.md
-              echo "Total lines in program">>README.md
-              wc-1 guessinggame.sh>>README.md
+guessinggame.sh
+
+echo"GUESSING GAME"
+echo"Make A guess on the number of files in the directory"
+value=$(ls-la |wc-1)
+function game {
+echo "Guess the number"
+read guess
+}
+while [[$guess -ne $value]]
+do 
+game
+if[[$guess -gt $value]]
+then
+echo "Your guess is too high,Try lesser one"
+elif[[$guess -lt $value]]
+then
+echo "Your guess is too low,Try again with bigger one"
+else
+echo "Wrong Guess"
+fi
+done
+echo"Congrats!!! you guessed it right"
